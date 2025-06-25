@@ -20,7 +20,7 @@ function HabitList({ habits, toggleHabit, deleteHabit, editHabitName }) {
   return (
     <ul>
       {habits.map((habit, index) => (
-        <li key={index}>
+        <li key={index} style={{ marginBottom: "20px" }}>
           <input
             type="checkbox"
             checked={habit.completed}
@@ -38,7 +38,7 @@ function HabitList({ habits, toggleHabit, deleteHabit, editHabitName }) {
             </>
           ) : (
             <>
-              {habit.name}
+              <span style={{ marginLeft: "10px", fontWeight: "bold" }}>{habit.name}</span>
               <button
                 onClick={() => handleEdit(index, habit.name)}
                 style={{
@@ -68,6 +68,18 @@ function HabitList({ habits, toggleHabit, deleteHabit, editHabitName }) {
                 🗑
               </button>
             </>
+          )}
+
+          {/* 📅 Show completed dates */}
+          {habit.history && habit.history.length > 0 && (
+            <div style={{ marginTop: "10px", marginLeft: "25px" }}>
+              <strong>Completed on:</strong>
+              <ul style={{ paddingLeft: "20px" }}>
+                {habit.history.map((date, i) => (
+                  <li key={i}>{date}</li>
+                ))}
+              </ul>
+            </div>
           )}
         </li>
       ))}

@@ -8,7 +8,7 @@ body {
 
 /* Main container */
 .App {
-  max-width: 500px;
+  max-width: 600px;
   margin: 0 auto;
   background-color: white;
   border-radius: 12px;
@@ -38,14 +38,16 @@ input[type="text"] {
   font-size: 16px;
 }
 
+/* Generic button style */
 button {
-  padding: 10px 20px;
+  padding: 8px 16px;
   border: none;
   background-color: #4caf50;
   color: white;
   border-radius: 6px;
   cursor: pointer;
   font-weight: bold;
+  transition: background-color 0.2s ease;
 }
 
 button:hover {
@@ -71,4 +73,48 @@ li {
 input[type="checkbox"] {
   margin-right: 10px;
   transform: scale(1.2);
+}
+
+/* Edit and Delete buttons */
+li button {
+  margin-left: 10px;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+li button:nth-child(3) {
+  background-color: #2196f3; /* Edit - blue */
+}
+
+li button:nth-child(3):hover {
+  background-color: #1976d2;
+}
+
+li button:nth-child(4) {
+  background-color: #ff4d4d; /* Delete - red */
+}
+
+li button:nth-child(4):hover {
+  background-color: #e53935;
+}
+
+/* Reset button styling */
+.App > button {
+  display: block;
+  width: 100%;
+  margin-top: 30px;
+  background-color: #f44336;
+  font-size: 16px;
+}
+
+.App > button:hover {
+  background-color: #d32f2f;
+}
+
+/* Chart container */
+h2 {
+  text-align: center;
+  margin-top: 40px;
+  color: #333;
 }
